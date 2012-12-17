@@ -19,4 +19,5 @@ dependencies {
     compile 'org.hornetq:hornetq-jms-client:2.2.16.Final'
     runtime 'org.jboss.netty:netty:3.2.5.Final'
     runtime 'jboss:jnp-client:3.2.1'
+    testCompile 'junit:junit:4.10'
 }
