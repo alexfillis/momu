@@ -8,11 +8,11 @@ import java.util.concurrent.TimeoutException;
  * This class is not thread-safe. If you need to use it across multiple threads, prefer instead to have an instance per
  * thread.
  */
-public class JmsTestingClient {
+public class JmsRequestResponseVerifier {
     private Connection connection;
     private Session session;
 
-    public JmsTestingClient(Connection connection) {
+    public JmsRequestResponseVerifier(Connection connection) {
         this.connection = connection;
     }
 

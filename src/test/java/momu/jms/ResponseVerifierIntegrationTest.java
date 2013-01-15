@@ -26,7 +26,7 @@ import java.util.List;
  */
 @RunWith(value=Parameterized.class)
 public class ResponseVerifierIntegrationTest {
-    private static final JmsTestingClient jmsClient;
+    private static final JmsRequestResponseVerifier jmsClient;
     private static final HornetQConnectionFactory cf;
 
     private final String message;
@@ -35,7 +35,7 @@ public class ResponseVerifierIntegrationTest {
         TransportConfiguration transportConfiguration = new TransportConfiguration(NettyConnectorFactory.class.getName());
         cf = HornetQJMSClient.createConnectionFactoryWithoutHA(JMSFactoryType.CF, transportConfiguration);
         try {
-            jmsClient = new JmsTestingClient(cf.createConnection());
+            jmsClient = new JmsRequestResponseVerifier(cf.createConnection());
         } catch (JMSException e) {
             throw new RuntimeException(e);
         }
